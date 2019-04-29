@@ -5,7 +5,6 @@ public class Technique {
     private int id;
     private double price;
     private String category;
-    //private BookGenre genre; ENUM
 
     public Technique() {}
     public Technique(int id, double price, String category) {
@@ -13,6 +12,7 @@ public class Technique {
         this.price = price;
         this.category = category;
     }
+
 
     public int getId() { return id; }
     public void setId(int id) { this.id = id; }
@@ -23,8 +23,22 @@ public class Technique {
 
     @Override
     public boolean equals(Object obj) {
-        Technique otherTechnique = (Technique) obj;
-        return this.id == otherTechnique.id && this.price == otherTechnique.price && this.category == otherTechnique.category;
+        Technique otherTecniq = (Technique) obj;
+        return this.id == otherTecniq.id && this.price == otherTecniq.price
+                && this.category == otherTecniq.category;
     }
 
+    @Override
+    public String toString() {
+        return String.format("Technique : id = %d, price = %.3f, category = %s \n", id, price, category);
+    }
+
+
+    public static void main(String[] args) {
+        Technique prod = new Technique(3, 500.600, "TV");
+        Technique prod2 = new Technique(3, 500.600, "TV");
+
+        System.out.println(prod.toString());
+        System.out.println(prod.equals(prod2));
+    }
 }

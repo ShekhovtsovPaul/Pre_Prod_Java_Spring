@@ -7,8 +7,8 @@ public class Ps4 extends GameConsole {
     private String color;
     private String disc;
 
-    Ps4(){}
-    Ps4(int id, double price, String category, String pack, String version, String color, String disc ) {
+    public Ps4(){}
+    public Ps4(int id, double price, String category, String pack, String version, String color, String disc ) {
         super(id, price, category, pack, version);
         this.color = color;
         this.disc = disc;
@@ -33,14 +33,7 @@ public class Ps4 extends GameConsole {
 
     @Override
     public String toString() {
-        return "Ps4{" +
-                "color=`" + color + '\'' +
-                ", disc='" + disc + '\'' +
-                ", id='" + getId() + '\'' +
-                ", price='" + getPrice() + '\'' +
-                ", category='" + getCategory() + '\'' +
-                ", pack'" + getPack() + '\'' +
-                ", version'" + getVersion() + '\'' +
-                '}';
+        return String.format("Ps4 : id %d, price %.3f, category %s, pack %s, version %s, color %s, disc %s",
+                getId(), getPrice(), getCategory(), getPack(), getVersion(), color, disc);
     }
 }

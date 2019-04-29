@@ -16,6 +16,7 @@ public class MyList<E> implements List<E> {
 //        arr = new Object[INITIAL_ARRAY_SIZE];
 //        size = 0;
 //    }
+
     private E[] array_values;
     private int size;
     private static final int INITIAL_ARRAY_SIZE = 20;

@@ -7,10 +7,10 @@ public class GameConsole extends Technique {
     private String pack; // joistick 1 or 2, VR,
     private String version; // pro or slim
 
-    GameConsole(){}
-    GameConsole(int id, double price, String category, String complect, String version) {
+    public GameConsole(){}
+    public GameConsole(int id, double price, String category, String pack, String version) {
         super(id, price, category);
-        this.pack = complect;
+        this.pack = pack;
         this.version = version;
     }
 
@@ -22,8 +22,9 @@ public class GameConsole extends Technique {
 
     @Override
     public boolean equals(Object obj) {
-        GameConsole otherGameConsole = (GameConsole) obj;
-        return this.pack == otherGameConsole.pack && this.version == otherGameConsole.version && super.equals(obj);
+        GameConsole otherConsol = (GameConsole) obj;
+        return this.pack == otherConsol.pack && this.version == otherConsol.version
+                && super.equals(obj);
     }
 
     @Override
@@ -33,12 +34,7 @@ public class GameConsole extends Technique {
 
     @Override
     public String toString() {
-        return "GameConsole{" +
-                "pack='" + pack + '\'' +
-                ", version='" + version + '\'' +
-                ", id='" + getId() + '\'' +
-                ", price='" + getPrice() + '\'' +
-                ", category='" + getCategory() + '\'' +
-                '}';
+        return String.format("GC : id = %d, price = %f.3, category = %s, pack = %s, version = %s",
+                getId(), getPrice(), getCategory(), pack, version );
     }
 }

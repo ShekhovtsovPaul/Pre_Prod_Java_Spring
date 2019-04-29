@@ -23,7 +23,8 @@ public class LapTop extends Technique {
     @Override
     public boolean equals(Object obj) {
         LapTop otherLapTop = (LapTop) obj;
-        return this.hdd == otherLapTop.hdd && this.processor == otherLapTop.processor && super.equals(obj);
+        return this.hdd == otherLapTop.hdd && this.processor == otherLapTop.processor
+                && super.equals(obj);
     }
 
     @Override
@@ -33,12 +34,7 @@ public class LapTop extends Technique {
 
     @Override
     public String toString() {
-        return "LapTop{" +
-                "hdd=" + hdd +
-                ", processor='" + processor + '\'' +
-                ", id='" + getId() + '\'' +
-                ", price='" + getPrice() + '\'' +
-                ", category='" + getCategory() + '\'' +
-                '}';
+        return String.format("Laptop : id %d, price %.3f, category %s, hdd %d, processor %s",
+                getId(), getPrice(), getCategory(), hdd, processor);
     }
 }
